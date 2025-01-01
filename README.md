@@ -21,3 +21,23 @@ ssh-keygen -t rsa -C"上面的emailAddress"
 
 f.用以下代码查看密钥：
 cat /Users/fangsheng/.ssh/id_rsa.pub
+
+g.添加到github，然后用以下命令检查是否添加成功：
+ssh -T git@github.com
+
+h.如果有以下报错：
+ssh: connect to host github.com port 22: Operation timed out
+输入以下命令：
+host github.com
+User 上面的emailAddress
+Hostname ssh.github.com
+PreferredAuthentications publicly
+IdentityFile ~/.ssh/id_rsa
+Port 443
+
+i.再次执行以下命令：
+ssh -T git@github.com
+
+j.出现以下内容即为成功：
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi fangsheng99! You've successfully authenticated, but GitHub does not provide shell access.
