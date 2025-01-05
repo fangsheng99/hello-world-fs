@@ -1,0 +1,2 @@
+Q1:手机预览微信小程序，界面空白
+A1:删除app.js中的lazycodeloading:requiredcomponents即可
